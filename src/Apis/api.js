@@ -42,4 +42,25 @@ async function getUser() {
   }
 }
 
-export default getUser;
+async function getProducts() {
+  try {
+    const response = await axios.get('https://fakestoreapi.com/products');
+    
+    return response;
+   
+  } catch (error) {
+    console.error(error);
+  }
+}
+async function getCatagories() {
+  try {
+    const response = await axios.get('https://fakestoreapi.com/products/categories');
+
+    return response;
+   
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export default {getUser,getProducts,getCatagories};

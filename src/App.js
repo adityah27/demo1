@@ -19,15 +19,16 @@ const AppContent = () => {
   const shouldRenderAppBar = !location.pathname.includes('/login');
 
   return (
-    <div>
+    <div style={{ background: '#F6F5F5', display: 'flex', flexDirection: 'column',minHeight:'100vh' }}>
       {shouldRenderAppBar && <ResponsiveAppBar />}
-
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/users" element={<Users />} />
-        <Route path="/products" element={<Products />} />
-      </Routes>
+      <div style={{ flex: 1 }}>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/products" element={<Products />} />
+        </Routes>
+      </div>
     </div>
   );
 };
